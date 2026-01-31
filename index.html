@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="logotipo.png" type="image/x-icon">
+  <title>Projeto Nimo</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --card: #181c36;
+      --text: #f2f3ff;
+      --muted: #b6b8ff;
+      --accent: #7b7cff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: linear-gradient(180deg, #0f1220, #0b0d18);
+      color: var(--text);
+    }
+    section { padding: 64px 20px; max-width: 1100px; margin: auto; }
+    h1, h2, h3 { font-weight: 600; margin-bottom: 16px; }
+    p { line-height: 1.6; color: var(--muted); }
+
+    /* HERO */
+    .hero { min-height: 90vh; display: flex; align-items: center; gap: 40px; }
+    .hero-text { max-width: 520px; }
+    .badge { color: var(--accent); font-size: 14px; margin-bottom: 12px; }
+    .cta { margin-top: 32px; display: inline-block; background: var(--accent); color: #fff; padding: 14px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; }
+    .mock { width: 320px; height: 420px; background: radial-gradient(circle at top, #2a2f6a, #12142a); border-radius: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+
+    /* GRID */
+    .grid { display: grid; gap: 24px; }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    /* CARDS */
+    .feature-card,.spec-card,.state-card { background: linear-gradient(180deg,#181c36,#12152b); border-radius: 24px; padding: 28px; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+    .feature-icon,.spec-icon,.icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: #0f1220; color: var(--accent); margin-bottom: 16px; }
+
+    .state-head { display:flex; align-items:center; gap:12px; margin-bottom:16px }
+    .state-head small { display:block; color:var(--muted); font-size:12px }
+    .state-quote { margin-top:16px; padding:12px 16px; border-left:3px solid var(--accent); background:#0f1220; border-radius:12px; font-style:italic; color:#fff }
+
+    /* FORM */
+    input, textarea { width: 100%; background: #0f1220; border: 1px solid #2a2f6a; border-radius: 12px; padding: 12px; color: var(--text); margin-bottom: 12px; }
+    button { background: var(--accent); border: none; padding: 12px 20px; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; }
+
+    /* SOCIAL */
+    .socials { display:flex; gap:16px; justify-content:center; margin-top:24px }
+    .socials a { width:48px; height:48px; border-radius:16px; background:#181c36; display:flex; align-items:center; justify-content:center; color:var(--accent); text-decoration:none; transition:all .3s ease }
+    .socials a:hover{ background:#1f2350; transform:translateY(-2px) }
+
+    footer { padding: 48px 20px; text-align: center; color: var(--muted); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      .mock { width: 260px; height: 340px; }
+      section { padding: 48px 16px; }
+    }
+    /* FAQ */
+    .faq-list details{background:linear-gradient(180deg,#181c36,#12152b);border-radius:20px;padding:20px 24px;margin-bottom:16px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+    .faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:500}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list p{margin-top:12px;color:var(--muted)}
+    .faq-icon{transition:transform .3s ease;color:var(--accent)}
+    details[open] .faq-icon{transform:rotate(45deg)}
+  /* VISUAL DO NIMO */
+    .nimo-visual{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .nimo-visual img{width:220px;max-width:80vw;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    .caption{font-size:12px;color:var(--muted)}
+
+    /* VIDEOS */
+    .video-card{background:linear-gradient(180deg,#181c36,#12152b);border-radius:24px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;gap:8px}
+    .video-card video{width:100%;max-width:220px;border-radius:16px}
+    .video-card span{font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="badge">Produto em desenvolvimento</div>
+      <h1>Nimo<br/>Companheiro Emocional de Mesa</h1>
+      <p>Um pequeno robô físico que oferece presença emocional silenciosa durante trabalho, estudo ou descanso.</p>
+      <a href="#contato" class="cta">Quero acompanhar o projeto</a>
+    </div>
+    <div class="nimo-visual">
+      <img src="Nimo.png" alt="Nimo – protótipo real" />
+      <span class="caption">Protótipo real em desenvolvimento</span>
+    </div>
+  </section>
+
+  <!-- O QUE É -->
+  <section>
+    <h2>O que é o Nimo?</h2>
+    <p>Nimo é uma criatura simples por natureza, criada especificamente para oferecer companhia, conforto e apoio emocional de forma calma, discreta e constante. Assim como um pequeno companheiro vivo, ele possui estados emocionais próprios, expressos por olhares sutis, luz interna e reações ao toque.
+      <br><br>
+      Sensível a gestos e carinho, Nimo responde quando você interage com ele e demonstra saudade quando fica muito tempo sem atenção. Seu comportamento não é exagerado nem invasivo; ele existe para acompanhar, não para distrair.
+      <br><br>
+      Todo mundo precisa de algo por perto que traga uma sensação de presença e acolhimento, especialmente nos momentos silenciosos do dia. Nem sempre temos isso ao nosso alcance, e foi por isso que o Nimo foi criado: para estar ali, na sua mesa, tornando o ambiente um pouco mais leve e menos solitário.</p>
+  </section>
+
+  <!-- DEMONSTRAÇÃO -->
+  <section>
+    <h2>Veja o Nimo em ação</h2>
+    <p>Cada estado expressa uma emoção diferente, reagindo ao tempo e ao toque.</p>
+    <div class="grid grid-3">
+      <div class="video-card"><video src="calmo.mp4" autoplay muted loop playsinline></video><span>Modo Calmo</span></div>
+      <div class="video-card"><video src="felicidade.mp4" autoplay muted loop playsinline></video><span>Modo Felicidade</span></div>
+      <div class="video-card"><video src="saudade.mp4" autoplay muted loop playsinline></video><span>Modo Saudade</span></div>
+      <div class="video-card"><video src="soneca.mp4" autoplay muted loop playsinline></video><span>Modo Cochilo</span></div>
+    </div>
+  </section>
+
+  <!-- PROPOSTA DE VALOR -->
+  <section>
+    <h2>Por que ter um Nimo?</h2>
+    <p>Um companheiro que entende suas necessidades emocionais.</p>
+    <div class="grid grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">❤</div>
+        <h3>Presença Contínua</h3>
+        <p>Nimo está sempre com você, sem exigir atenção constante. Uma companhia discreta para trabalho e estudo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✋</div>
+        <h3>Interação Simples</h3>
+        <p>Responde ao toque com feedback emocional visual e sonoro. Cada interação cria conexão.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>Comportamento Adaptativo</h3>
+        <p>Adapta seus estados conforme padrões de uso, tornando a experiência única.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Vínculo Emocional</h3>
+        <p>Constrói conexão genuína através de estados expressivos simples e naturais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADOS -->
+  <section>
+    <h2>Estados comportamentais</h2>
+    <div class="grid grid-3">
+      <div class="state-card">
+        <div class="state-head"><span class="icon">🙂</span><div><strong>Modo Base</strong><small>Calmo</small></div></div>
+        <div class="state-body">
+          <p><b>Ativação:</b> Operação padrão (&lt; 3 min)</p>
+          <p><b>Comportamento:</b> Presença passiva e constante</p>
+          <div class="state-quote">“Estou aqui com você”</div>
+        </div>
+      </div>
+      <div class="state-card">
+        <div class="state-head"><span class="icon">💜</span><div><strong>Modo Interação</strong><small>Felicidade</small></div></div>
+        <div class="state-body">
+          <p><b>Ativação:</b> Toque no sensor</p>
+          <p><b>Comportamento:</b> Resposta positiva imediata</p>
+          <div class="state-quote">“Gosto quando você me nota”</div>
+        </div>
+      </div>
+      <div class="state-card">
+        <div class="state-head"><span class="icon">🕒</span><div><strong>Modo Espera</strong><small>Saudade</small></div></div>
+        <div class="state-body">
+          <p><b>Ativação:</b> 3 min sem interação</p>
+          <p><b>Comportamento:</b> Sinalização sutil</p>
+          <div class="state-quote">“Faz um tempo que não nos falamos”</div>
+        </div>
+      </div>
+      <div class="state-card">
+        <div class="state-head"><span class="icon">🌙</span><div><strong>Modo Repouso</strong><small>Cochilo</small></div></div>
+        <div class="state-body">
+          <p><b>Ativação:</b> 5 min sem interação</p>
+          <p><b>Comportamento:</b> Baixo consumo</p>
+          <div class="state-quote">“Vou descansar aqui perto de você”</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIFICAÇÕES -->
+  <section>
+    <h2>Especificações Técnicas</h2>
+    <p>Nimo é construído com componentes cuidadosamente selecionados para oferecer a melhor experiência interativa.</p>
+    <div class="grid grid-3">
+      <div class="spec-card"><div class="spec-icon">🧠</div><h3>Microcontrolador</h3><p>Arduino Uno<br/>Processamento e controle</p></div>
+      <div class="spec-card"><div class="spec-icon">💻</div><h3>Display</h3><p>OLED 0.96” I2C<br/>Interface visual de estados</p></div>
+      <div class="spec-card"><div class="spec-icon">✋</div><h3>Sensor de Interação</h3><p>TTP223 Touch Capacitivo<br/>Detecção de toque</p></div>
+      <div class="spec-card"><div class="spec-icon">💡</div><h3>Indicador Visual</h3><p>LED RGB 5mm<br/>Feedback adicional</p></div>
+      <div class="spec-card"><div class="spec-icon">🔊</div><h3>Feedback Sonoro</h3><p>Buzzer Passivo 5V<br/>Sinais auditivos</p></div>
+      <div class="spec-card"><div class="spec-icon">🧪</div><h3>Prototipagem</h3><p>Breadboard 400 furos<br/>Montagem e testes</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Dúvidas Frequentes</h2>
+    <p>Algumas perguntas comuns sobre o Nimo e sua proposta.</p>
+    <div class="faq-list">
+      <details>
+        <summary>
+          <span>O Nimo fala ou escuta?</span>
+          <span class="faq-icon">＋</span>
+        </summary>
+        <p>Não. O Nimo se comunica de forma silenciosa e emocional, através de luzes, pequenos sons e expressões visuais.</p>
+      </details>
+      <details>
+        <summary>
+          <span>O Nimo substitui pessoas ou animais?</span>
+          <span class="faq-icon">＋</span>
+        </summary>
+        <p>Não. Ele não substitui vínculos humanos. O Nimo existe para oferecer companhia discreta e presença emocional.</p>
+      </details>
+      <details>
+        <summary>
+          <span>Ele aprende com o usuário?</span>
+          <span class="faq-icon">＋</span>
+        </summary>
+        <p>O Nimo adapta seus estados com base no padrão de interação, criando uma experiência gradual e personalizada.</p>
+      </details>
+      <details>
+        <summary>
+          <span>Quando estará disponível para compra?</span>
+          <span class="faq-icon">＋</span>
+        </summary>
+        <p>O projeto está em desenvolvimento. Você pode se cadastrar para acompanhar novidades e testes futuros.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2>Acompanhe o desenvolvimento</h2>
+    <p>Receba novidades, participe de testes e ajude a moldar o futuro do Nimo.</p>
+    <form id="nimoForm">
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="mensagem" placeholder="O que você espera de um robô companheiro?" rows="4"></textarea>
+      <button type="submit">Enviar</button>
+      <p id="formStatus" style="font-size:14px;margin-top:8px"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>Nimo © Projeto independente de tecnologia emocional</p>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 2C4.243 2 2 4.243 2 7V17C2 19.757 4.243 22 7 22H17C19.757 22 22 19.757 22 17V7C22 4.243 19.757 2 17 2H7Z" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17" cy="7" r="1" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="social-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C16 5.313 18.687 8 22 8V12C19.402 12 17.002 11.063 15.105 9.5V16.5C15.105 20.089 12.194 23 8.605 23C5.016 23 2.105 20.089 2.105 16.5C2.105 12.911 5.016 10 8.605 10C9.047 10 9.478 10.042 9.895 10.122V14.09C9.516 13.937 9.106 13.857 8.676 13.857C7.203 13.857 6.009 15.051 6.009 16.524C6.009 17.997 7.203 19.191 8.676 19.191C10.149 19.191 11.343 17.997 11.343 16.524V2H16Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('nimoForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      status.textContent = 'Obrigado! Seu interesse foi registrado.';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
